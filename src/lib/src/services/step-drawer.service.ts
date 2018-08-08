@@ -1,6 +1,14 @@
-import { Injectable, ComponentFactory, ComponentRef, ComponentFactoryResolver, ViewContainerRef, ApplicationRef, Injector, EmbeddedViewRef } from '@angular/core';
-import { JoyrideStepComponent } from "../components/step/joyride-step.component";
-import { JoyrideStep } from '../models/joyride-step.class';
+import {
+    Injectable,
+    ComponentFactory,
+    ComponentRef,
+    ComponentFactoryResolver,
+    ApplicationRef,
+    Injector,
+    EmbeddedViewRef
+} from '@angular/core';
+import {JoyrideStepComponent} from "../components/step/joyride-step.component";
+import {JoyrideStep} from '../models/joyride-step.class';
 
 @Injectable()
 export class StepDrawerService {
@@ -11,7 +19,8 @@ export class StepDrawerService {
         private readonly componentFactoryResolver: ComponentFactoryResolver,
         private appRef: ApplicationRef,
         private injector: Injector
-    ) { }
+    ) {
+    }
 
     draw(step: JoyrideStep) {
         const factory: ComponentFactory<JoyrideStepComponent> = this.componentFactoryResolver.resolveComponentFactory(JoyrideStepComponent);

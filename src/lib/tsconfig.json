@@ -1,27 +1,35 @@
 {
-    "compilerOptions": {
-        "declaration": true,
-        "target": "es5",
-        "module": "es2015",
-        "outDir": "../lib/build",
-        "sourceMap": false,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "moduleResolution": "node",
-        "lib": ["es2015", "dom"]
-    },
-    "files": [
-        "./public_api.ts"
+  "compilerOptions": {
+    "baseUrl": "",
+    "declaration": true,
+    "target": "es5",
+    "module": "es2015",
+    "outDir": "../lib/build",
+    "sourceMap": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2015",
+      "dom"
     ],
-    "exclude": [
-        "node_modules"
-    ],
-    "angularCompilerOptions": {
-        "strictMetadataEmit": true,
-        "skipTemplateCodegen": true,
-        "flatModuleOutFile": "joyride.js",
-        "flatModuleId": "ngx-joyride",
-        "annotateForClosureCompiler": true,
-        "debug": true
+    "paths": {
+      "@angular/*": ["../node_modules/@angular/*"]
     }
+  },
+  "files": [
+    "./public_api.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "angularCompilerOptions": {
+   "strictMetadataEmit": true,
+    "skipTemplateCodegen": true,
+    //"fullTemplateTypeCheck": true,
+    "flatModuleOutFile": "joyride.js",
+    "flatModuleId": "ngx-joyride",
+    "annotateForClosureCompiler": true,
+    "debug": true
+  }
 }

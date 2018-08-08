@@ -1,1 +1,17 @@
-export * from './src/joyride';
+export {
+    JoyrideModule,
+    JoyrideService,
+    JoyrideDirective,
+    JoyrideStepService,
+    JoyrideBackdropService,
+    EventListenerService,
+    JoyrideStepsContainerService,
+    DocumentService,
+    JoyrideOptionsService,
+    StepDrawerService,
+    DomRefService,
+    Logger,
+    JoyrideStepComponent,
+    JoyrideArrowComponent,
+    JoyrideButtonComponent
+}    from './src/joyride';

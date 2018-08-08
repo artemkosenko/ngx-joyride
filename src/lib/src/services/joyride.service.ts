@@ -2,9 +2,9 @@ import { Injectable } from '@angular/core';
 import { JoyrideStepService } from "./joyride-step.service";
 import { JoyrideOptionsService } from './joyride-options.service';
 import { JoyrideOptions } from '../models/joyride-options.class';
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/finally';
 import { JoyrideStepInfo } from '../models/joyride-step-info.class';
+import {Observable} from "rxjs";
+import {finalize} from "rxjs/operators";
 
 @Injectable()
 export class JoyrideService {
@@ -23,7 +23,9 @@ export class JoyrideService {
             if (options) {
                 this.optionsService.setOptions(options);
             }
-            this.tour$ = this.stepService.startTour().finally(() => this.tourInProgress = false);
+            this.tour$ = this.stepService.startTour().pipe(
+                finalize(() => this.tourInProgress = false)
+            )
             this.tour$.subscribe();
         }
         return this.tour$;

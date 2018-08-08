@@ -1,9 +1,9 @@
-import { Component, Input, AfterViewInit, forwardRef, Inject, ViewEncapsulation, OnInit, OnDestroy, ViewContainerRef, ElementRef, ViewChild, Renderer2, Injector, TemplateRef } from "@angular/core";
+import { Component, Input, AfterViewInit, ViewEncapsulation, OnInit, OnDestroy, ViewContainerRef, ElementRef, ViewChild, Renderer2, Injector, TemplateRef } from "@angular/core";
 import { JoyrideStep } from "../../models/joyride-step.class";
 import { JoyrideStepService, ARROW_SIZE, DISTANCE_FROM_TARGET } from "../../services/joyride-step.service";
 import { JoyrideStepsContainerService } from "../../services/joyride-steps-container.service";
 import { EventListenerService } from "../../services/event-listener.service";
-import { Subscription } from "rxjs/Subscription";
+import { Subscription } from "rxjs";
 import { DocumentService } from "../../services/document.service";
 import { JoyrideOptionsService } from "../../services/joyride-options.service";
 import { Logger } from "../../services/logger.service";
@@ -66,7 +66,8 @@ export class JoyrideStepComponent implements OnInit, OnDestroy, AfterViewInit {
     @ViewChild('stepContainer') stepContainer: ElementRef;
 
     constructor(
-        injector: Injector,
+        private injector: Injector,
+        //private readonly joyrideStepService: JoyrideStepService,
         private readonly stepsContainerService: JoyrideStepsContainerService,
         private readonly eventListenerService: EventListenerService,
         private readonly documentService: DocumentService,
@@ -74,6 +75,7 @@ export class JoyrideStepComponent implements OnInit, OnDestroy, AfterViewInit {
         private readonly renderer: Renderer2,
         private readonly logger: Logger,
         private readonly optionsService: JoyrideOptionsService
+
     ) {
         // Need to Inject here otherwise you will obtain a circular dependency
         this.joyrideStepService = injector.get(JoyrideStepService)

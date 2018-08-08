@@ -1,7 +1,7 @@
 import { Injectable } from "@angular/core";
 import { JoyrideStep } from "../models/joyride-step.class";
-import { Subject } from "rxjs/Subject";
 import { JoyrideOptionsService } from "./joyride-options.service";
+import {Subject} from "rxjs";
 
 const ROUTE_SEPARATOR = '@';
 

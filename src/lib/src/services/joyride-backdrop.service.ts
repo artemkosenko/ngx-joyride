@@ -1,4 +1,4 @@
-import { Injectable, Renderer2, ElementRef, RendererFactory2, ViewContainerRef } from "@angular/core";
+import { Injectable, Renderer2, RendererFactory2, ViewContainerRef } from "@angular/core";
 import { DocumentService } from "./document.service";
 import { Scroll } from "./event-listener.service";
 import { JoyrideOptionsService } from "./joyride-options.service";

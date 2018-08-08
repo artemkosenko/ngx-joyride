@@ -1,3 +1,3 @@
-export * from './step/joyride-step.component';
-export * from './arrow/arrow.component';
-export * from './button/button.component';
+export {JoyrideStepComponent} from './step/joyride-step.component';
+export {JoyrideArrowComponent} from './arrow/arrow.component';
+export {JoyrideButtonComponent} from './button/button.component';
